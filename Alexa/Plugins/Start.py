@@ -38,15 +38,15 @@ __MODULE__ = "🔘 ᴇssᴇɴᴛɪᴀʟs"
 __HELP__ = """
 
 
-/start 
+/mstart 
 - Start the Bot.
 
 
-/help 
+/mhelp 
 - Get Commands Helper Menu.
 
 
-/settings 
+/msettings 
 - Get Settings button.
 
 - ᴘᴏᴡᴇʀᴅ ʙʏ 😍 ʀᴏᴄᴋs ᴀɴᴅ @AsadSupport.
@@ -103,7 +103,7 @@ async def welcome(_, message: Message):
             return
 
 
-@app.on_message(filters.command(["help", "start"]) & filters.group)
+@app.on_message(filters.command(["mhelp", "mstart"]) & filters.group)
 async def useradd(_, message: Message):
     out = start_pannel()
     await asyncio.gather(
@@ -123,7 +123,7 @@ async def useradd(_, message: Message):
 
 
 
-@app.on_message(filters.command("start") & filters.private & ~filters.edited)
+@app.on_message(filters.command("mstart") & filters.private & ~filters.edited)
 async def useradd(_, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/4c7025b0b94c0d2b5f94a.jpg",
